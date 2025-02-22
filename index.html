@@ -2,216 +2,88 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="SOFINGEC - Société de Finance, Gestion et Consulting.">
-    <title>SOFINGEC - Votre Partenaire de Confiance en Finance et Gestion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SOFINGEC - Plateforme SaaS de Gestion Financière et Consulting.">
+    <title>SOFINGEC SaaS - Gestion Financière et Consulting</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; color: #333; overflow-x: hidden; background-color: #fdfdfd; scroll-behavior: smooth; }
-        header { background: linear-gradient(135deg, #FF7E5F, #FEB47B); color: white; text-align: center; padding: 140px 20px; position: relative; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; }
-        header img { width: 140px; max-width: 100%; height: auto; margin-bottom: 20px; animation: fadeIn 2s ease-in-out; }
-        header h1 { font-size: 3rem; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-        header p { font-size: 1.3rem; margin-top: 10px; opacity: 0.9; }
+        body { font-family: 'Poppins', sans-serif; background-color: #f4f6f8; color: #333; }
+        header { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; text-align: center; padding: 80px 20px; }
+        header h1 { font-size: 3rem; font-weight: bold; }
+        header p { font-size: 1.2rem; margin-top: 10px; }
+        .btn { display: inline-block; margin-top: 20px; padding: 15px 30px; background-color: #ff6b6b; color: white; border-radius: 30px; text-decoration: none; font-size: 1.1rem; transition: background 0.3s; }
+        .btn:hover { background-color: #ff5252; }
 
-        .btn-container { margin-top: 40px; display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; }
-        .btn-client, .btn-services, .btn-devis { background-color: #FF6F61; color: white; padding: 18px 45px; border: none; border-radius: 50px; font-size: 1.3rem; cursor: pointer; transition: transform 0.3s, background 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .btn-client:hover, .btn-services:hover, .btn-devis:hover { background-color: #FF3B2E; transform: translateY(-5px); }
+        section { padding: 80px 5%; text-align: center; }
+        .section-title { font-size: 2.5rem; margin-bottom: 40px; color: #1e3c72; }
 
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background-color: #ffffff; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); position: sticky; top: 0; z-index: 1000; border-bottom: 4px solid #FF7E5F; }
-        nav img { width: 120px; }
-        .burger { display: flex; flex-direction: column; gap: 6px; cursor: pointer; position: absolute; right: 30px; top: 20px; transform: scale(1.5); }
-        .burger div { width: 30px; height: 4px; background-color: #FF7E5F; border-radius: 2px; }
-        nav ul { display: none; flex-direction: column; width: 100%; background-color: white; position: absolute; top: 70px; left: 0; padding: 20px 0; text-align: center; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); border-radius: 0 0 20px 20px; }
-        nav ul.active { display: flex; }
-        nav a { color: #333; font-weight: 600; text-decoration: none; padding: 15px 0; position: relative; }
-        nav a::after { content: ''; width: 0; height: 3px; background: #FF7E5F; position: absolute; bottom: -5px; left: 0; transition: width 0.3s; }
-        nav a:hover::after { width: 100%; }
-        @media (min-width: 1024px) { nav ul { display: flex !important; flex-direction: row; gap: 30px; position: static; box-shadow: none; background: transparent; padding: 0; } .burger { display: none; } }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .feature-item { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .feature-item h3 { color: #2a5298; margin-bottom: 15px; }
 
-        section { padding: 100px 5%; text-align: center; background-color: #fdfdfd; position: relative; }
-        .section-title { font-size: 2.8rem; margin-bottom: 40px; color: #FF6F61; font-weight: 700; text-shadow: 1px 1px 3px rgba(0,0,0,0.1); }
+        .contact-form { display: flex; flex-direction: column; gap: 20px; max-width: 600px; margin: 0 auto; }
+        .contact-form input, .contact-form textarea { padding: 15px; border-radius: 10px; border: 1px solid #ddd; font-size: 1rem; }
+        .contact-form button { background-color: #2a5298; color: white; padding: 15px; border-radius: 10px; font-size: 1.1rem; cursor: pointer; }
+        .contact-form button:hover { background-color: #1e3c72; }
 
-        .separator {
-            width: 100%;
-            height: 100px;
-            background: linear-gradient(135deg, #FEB47B, #FF7E5F);
-            clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
-        }
-
-        .team-grid, .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .team-member, .service-item { background-color: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .team-member h4, .service-item h4 { color: #FF6F61; margin-bottom: 10px; }
-
-        iframe { width: 100%; height: 350px; border: none; border-radius: 20px; margin-top: 30px; }
-
-        .contact-form, .candidature-form, .devis-form { display: flex; flex-direction: column; gap: 25px; max-width: 700px; margin: 0 auto; }
-        .contact-form input, .contact-form textarea, .candidature-form input, .candidature-form textarea, .devis-form input, .devis-form textarea { padding: 20px; border-radius: 10px; border: 1px solid #ddd; font-size: 1.1rem; }
-        .contact-form button, .candidature-form button, .devis-form button { background-color: #FF6F61; color: white; padding: 15px; border: none; border-radius: 10px; font-size: 1.1rem; cursor: pointer; }
-        .contact-form button:hover, .candidature-form button:hover, .devis-form button:hover { background-color: #FF3B2E; }
-
-        .chat-btn { position: fixed; bottom: 20px; right: 20px; background-color: #FF6F61; color: white; border: none; padding: 20px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1001; }
-        .chat-popup { display: none; position: fixed; bottom: 80px; right: 20px; background-color: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); padding: 30px; width: 350px; z-index: 1002; }
-
-        footer { background-color: #222; color: white; text-align: center; padding: 40px 0; font-size: 1.2rem; letter-spacing: 0.5px; border-top-left-radius: 50px; border-top-right-radius: 50px; }
+        footer { background-color: #222; color: white; text-align: center; padding: 30px 0; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
-<nav>
-    <img src="images/logo.png" alt="Logo SOFINGEC">
-    <div class="burger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <ul>
-        <li><a href="#home">Accueil</a></li>
-        <li><a href="#team">Équipe</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#why-us">Pourquoi Nous Rejoindre</a></li>
-        <li><a href="#devis">Demander un Devis</a></li>
-        <li><a href="#testimonials">Témoignages</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#candidatures">Candidatures</a></li>
-    </ul>
-</nav>
-
-<header id="home">
-    <img src="images/logo.png" alt="Logo SOFINGEC">
-    <h1>SOFINGEC</h1>
-    <p>Votre <span class="highlight">Partenaire de Confiance</span> en Finance, Gestion et Consulting</p>
-    <div class="btn-container">
-        <button class="btn-client">Espace Client</button>
-    </div>
+<header>
+    <h1>SOFINGEC SaaS</h1>
+    <p>Votre plateforme en ligne de gestion financière, conseil et suivi budgétaire en temps réel.</p>
+    <a href="#features" class="btn">Découvrir les fonctionnalités</a>
 </header>
 
-<div class="separator"></div>
-
-<section id="team">
-    <h2 class="section-title">Notre Équipe</h2>
-    <div class="team-grid">
-        <div class="team-member">
-            <h4>Directeur Général</h4>
-            <p>Monsieur Abdelaziz BELOUBAD - Responsable de la stratégie globale de l'entreprise.</p>
+<section id="features">
+    <h2 class="section-title">Fonctionnalités Principales</h2>
+    <div class="features-grid">
+        <div class="feature-item">
+            <h3>Suivi de Trésorerie</h3>
+            <p>Gérez la trésorerie de votre entreprise en temps réel avec des rapports dynamiques et précis.</p>
         </div>
-        <div class="team-member">
-            <h4>Directrice des Ressources Humaines</h4>
-            <p>Madame Rabia MESSAOUDI MOUSSI - Gestion des talents et développement RH.</p>
+        <div class="feature-item">
+            <h3>Tableaux de Bord Personnalisés</h3>
+            <p>Créez des dashboards financiers sur-mesure pour visualiser vos KPIs essentiels.</p>
         </div>
-        <div class="team-member">
-            <h4>Directeur des Opérations</h4>
-            <p>Monsieur Amine BELOUBAD - Supervision des opérations quotidiennes.</p>
+        <div class="feature-item">
+            <h3>Gestion Budgétaire</h3>
+            <p>Planifiez et optimisez votre budget avec des outils intelligents et automatisés.</p>
         </div>
-        <div class="team-member">
-            <h4>Directeur R&D</h4>
-            <p>Monsieur Faycal BELOUBAD - Innovation et développement des nouvelles solutions.</p>
+        <div class="feature-item">
+            <h3>Outils d’Analyse Financière</h3>
+            <p>Analysez vos données financières avec des rapports détaillés et des prévisions précises.</p>
         </div>
-        <div class="team-member">
-            <h4>Directeur Commercial</h4>
-            <p>Monsieur Mehdi BELOUBAD - Gestion des relations clients et ventes.</p>
+        <div class="feature-item">
+            <h3>Accès Client Sécurisé</h3>
+            <p>Permettez à vos clients d’accéder à leurs documents et rapports financiers en toute sécurité.</p>
         </div>
-        <div class="team-member">
-            <h4>Directeur Technique</h4>
-            <p>Monsieur Othmane BELOUBAD - Responsable des systèmes d'information et infrastructure.</p>
+        <div class="feature-item">
+            <h3>Automatisation de la Comptabilité</h3>
+            <p>Automatisez la saisie comptable et réduisez le temps consacré aux tâches répétitives.</p>
         </div>
     </div>
 </section>
-
-<div class="separator"></div>
-
-<section id="services">
-    <h2 class="section-title">Nos Services</h2>
-    <div class="services-grid">
-        <div class="service-item">
-            <h4>Analyse Financière</h4>
-            <p>Analyse complète de la performance financière pour des décisions stratégiques.</p>
-        </div>
-        <div class="service-item">
-            <h4>Gestion Budgétaire</h4>
-            <p>Optimisation des budgets et gestion des flux financiers pour la croissance.</p>
-        </div>
-        <div class="service-item">
-            <h4>Audit Financier</h4>
-            <p>Audits internes et externes pour garantir la conformité et la transparence.</p>
-        </div>
-        <div class="service-item">
-            <h4>Conseil en Investissement</h4>
-            <p>Solutions d'investissement sur mesure pour une croissance durable.</p>
-        </div>
-    </div>
-</section>
-
-<div class="separator"></div>
-
-<section id="devis">
-    <h2 class="section-title">Demander un Devis</h2>
-    <form class="devis-form">
-        <input type="text" placeholder="Nom de votre entreprise" required>
-        <input type="email" placeholder="Votre adresse email" required>
-        <textarea rows="5" placeholder="Description de votre projet" required></textarea>
-        <button type="submit">Obtenir un Devis</button>
-    </form>
-</section>
-
-<div class="separator"></div>
-
-<section id="testimonials">
-    <h2 class="section-title">Témoignages</h2>
-    <p>"SOFINGEC a transformé notre gestion financière. Leur approche personnalisée a fait toute la différence." - Client Satisfait</p>
-</section>
-
-<div class="separator"></div>
 
 <section id="contact">
     <h2 class="section-title">Contactez-nous</h2>
-    <p>📞 Téléphone : +2126666666<br>📍 Adresse : Casablanca, Maroc</p>
-    <iframe src="https://www.google.com/maps?q=Casablanca,Maroc&output=embed"></iframe>
+    <p>Vous souhaitez en savoir plus ? Remplissez le formulaire ci-dessous :</p>
     <form class="contact-form">
-        <input type="text" placeholder="Votre nom complet" required>
+        <input type="text" placeholder="Votre nom" required>
         <input type="email" placeholder="Votre adresse email" required>
         <textarea rows="5" placeholder="Votre message" required></textarea>
-        <button type="submit">Envoyer le message</button>
+        <button type="submit">Envoyer</button>
     </form>
 </section>
-
-<div class="separator"></div>
-
-<section id="candidatures">
-    <h2 class="section-title">Rejoignez Notre Équipe</h2>
-    <p>Participez à l'aventure SOFINGEC. Nous recrutons des talents passionnés et ambitieux.</p>
-    <form class="candidature-form">
-        <input type="text" placeholder="Votre nom complet" required>
-        <input type="email" placeholder="Votre adresse email" required>
-        <input type="text" placeholder="Poste souhaité" required>
-        <textarea rows="5" placeholder="Message ou lettre de motivation" required></textarea>
-        <button type="submit">Envoyer la Candidature</button>
-    </form>
-</section>
-
-<div class="chat-btn" onclick="toggleChat()">💬</div>
-<div class="chat-popup" id="chatPopup">
-    <h4>Chat IA - Assistance SOFINGEC</h4>
-    <p>Bonjour ! Comment pouvons-nous vous aider aujourd'hui ?</p>
-</div>
 
 <footer>
-    <p>&copy; 2025 SOFINGEC - Société de Finance, Gestion et Consulting. Tous droits réservés.</p>
+    <p>&copy; 2024 SOFINGEC SaaS - Plateforme de Gestion Financière et Consulting. Tous droits réservés.</p>
 </footer>
-
-<script>
-    function toggleMenu() {
-        const menu = document.querySelector('nav ul');
-        menu.classList.toggle('active');
-    }
-
-    function toggleChat() {
-        const chatPopup = document.getElementById('chatPopup');
-        chatPopup.style.display = chatPopup.style.display === 'block' ? 'none' : 'block';
-    }
-</script>
 
 </body>
 </html>
