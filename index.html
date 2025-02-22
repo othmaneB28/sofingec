@@ -11,37 +11,38 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Poppins', sans-serif; color: #333; overflow-x: hidden; background-color: #f4f4f4; }
-        header { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; text-align: center; padding: 80px 20px; }
+        header { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; text-align: center; padding: 80px 20px; position: relative; }
         header img { width: 100px; max-width: 100%; height: auto; margin-bottom: 20px; }
         header h1 { font-size: 2.5rem; font-weight: bold; }
         header p { font-size: 1rem; margin-top: 10px; }
 
         .btn-container { margin-top: 30px; display: flex; flex-direction: column; gap: 15px; align-items: center; }
-        .btn-client, .btn-services { background-color: #ff6b6b; color: white; padding: 15px 30px; border: none; border-radius: 30px; font-size: 1rem; cursor: pointer; transition: background 0.3s; width: 80%; max-width: 300px; }
-        .btn-client:hover, .btn-services:hover { background-color: #ff5252; }
+        .btn-client, .btn-services, .btn-devis { background-color: #ff6b6b; color: white; padding: 15px 30px; border: none; border-radius: 30px; font-size: 1rem; cursor: pointer; transition: background 0.3s; width: 80%; max-width: 300px; }
+        .btn-client:hover, .btn-services:hover, .btn-devis:hover { background-color: #ff5252; }
 
         nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background-color: white; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); position: sticky; top: 0; z-index: 1000; }
         nav img { width: 100px; }
+        .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+        .burger div { width: 25px; height: 3px; background-color: #333; }
         nav ul { display: flex; list-style: none; gap: 20px; }
         nav a { color: #333; font-weight: 600; text-decoration: none; position: relative; }
         nav a::after { content: ''; width: 0; height: 2px; background: #ff6b6b; position: absolute; bottom: -5px; left: 0; transition: width 0.3s; }
         nav a:hover::after { width: 100%; }
+        @media (max-width: 768px) {
+            .burger { display: flex; }
+            nav ul { display: none; flex-direction: column; width: 100%; background-color: white; position: absolute; top: 60px; left: 0; padding: 20px 0; text-align: center; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); }
+            nav ul.active { display: flex; }
+        }
 
         section { padding: 80px 5%; text-align: center; }
         .section-title { font-size: 2rem; margin-bottom: 30px; color: #1e3c72; font-weight: 600; }
 
-        .about-content, .team-content, .why-content, .testimonials-content, .contact-details { max-width: 800px; margin: 0 auto; font-size: 1rem; line-height: 1.6; color: #555; text-align: justify; }
+        .services-grid, .team-grid, .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .service-item, .team-member, .testimonial-item { background: white; border-radius: 15px; padding: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
+        .service-item h3, .team-member h4, .testimonial-item span { color: #2a5298; font-weight: bold; }
+        .service-item p, .team-member p, .testimonial-item p { font-size: 0.95rem; }
 
-        .team-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
-        .team-member { background: white; border-radius: 15px; padding: 20px; width: 250px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
-        .team-member h4 { color: #2a5298; font-size: 1.2rem; margin-bottom: 10px; }
-        .team-member p { font-size: 0.9rem; }
-
-        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .testimonial-item { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
-        .testimonial-item p { font-style: italic; }
-        .testimonial-item span { display: block; margin-top: 10px; font-weight: bold; color: #2a5298; }
-
+        .contact-details { text-align: left; }
         iframe { width: 100%; height: 300px; border: none; border-radius: 15px; margin-bottom: 20px; }
 
         .contact-form { display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin: 0 auto; }
@@ -53,24 +54,23 @@
         .chat-popup { display: none; position: fixed; bottom: 80px; right: 20px; background-color: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); padding: 20px; width: 300px; z-index: 1002; }
 
         footer { background-color: #222; color: white; text-align: center; padding: 20px 0; font-size: 0.9rem; }
-
-        @media (max-width: 768px) {
-            header h1 { font-size: 2rem; }
-            nav ul { flex-direction: column; gap: 10px; }
-        }
     </style>
 </head>
 <body>
 
 <nav>
     <img src="images/logo.png" alt="Logo SOFINGEC">
+    <div class="burger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
     <ul>
         <li><a href="#home">Accueil</a></li>
-        <li><a href="#about">À propos</a></li>
         <li><a href="#team">Équipe</a></li>
-        <li><a href="#why">Pourquoi nous choisir ?</a></li>
-        <li><a href="#testimonials">Témoignages</a></li>
+        <li><a href="#services">Services</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="#candidatures">Candidatures</a></li>
     </ul>
     <button class="btn-client">Espace Client</button>
 </nav>
@@ -81,62 +81,31 @@
     <p>Société de Finance, Gestion et Consulting</p>
     <div class="btn-container">
         <button class="btn-services" onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' });">Découvrir nos services</button>
-        <button class="btn-client">Accéder à mon espace client</button>
+        <button class="btn-devis">Demander un devis</button>
     </div>
 </header>
 
-<section id="about">
-    <h2 class="section-title">À propos de SOFINGEC</h2>
-    <div class="about-content">
-        <p>
-            SOFINGEC est une société spécialisée dans la finance, la gestion et le consulting. Nous accompagnons les entreprises dans leurs stratégies financières, en proposant des solutions sur mesure adaptées à leurs besoins spécifiques. Avec une équipe d'experts chevronnés, nous garantissons des conseils fiables, des audits précis et une gestion optimisée pour soutenir la croissance durable de nos clients.
-        </p>
-    </div>
-</section>
-
-<section id="team">
-    <h2 class="section-title">Notre Équipe</h2>
-    <div class="team-grid">
-        <div class="team-member">
-            <h4>PDG</h4>
-            <p>Monsieur Dupont TEST</p>
+<section id="services">
+    <h2 class="section-title">Nos Services</h2>
+    <div class="services-grid">
+        <div class="service-item">
+            <h3>Analyse Financière</h3>
+            <p>Évaluation des performances financières pour des décisions éclairées.</p>
         </div>
-        <div class="team-member">
-            <h4>Directeur Financier</h4>
-            <p>Monsieur Léo TEST</p>
+        <div class="service-item">
+            <h3>Gestion Budgétaire</h3>
+            <p>Optimisation des budgets et planification stratégique pour maximiser la rentabilité.</p>
         </div>
-        <div class="team-member">
-            <h4>Directrice RH</h4>
-            <p>Madame Sarah TEST</p>
+        <div class="service-item">
+            <h3>Conseil en Investissement</h3>
+            <p>Stratégies d’investissement personnalisées pour une croissance durable.</p>
         </div>
-        <div class="team-member">
-            <h4>Directeur des Opérations</h4>
-            <p>Monsieur Ludo TEST</p>
+        <div class="service-item">
+            <h3>Audit Financier</h3>
+            <p>Contrôles et audits pour assurer la conformité réglementaire et la transparence financière.</p>
         </div>
     </div>
-</section>
-
-<section id="why">
-    <h2 class="section-title">Pourquoi choisir SOFINGEC ?</h2>
-    <div class="why-content">
-        <p>
-            Chez SOFINGEC, nous croyons en un accompagnement personnalisé et une expertise reconnue. Notre engagement envers la transparence, la qualité et la performance garantit à nos clients un partenariat fiable et des résultats mesurables.
-        </p>
-    </div>
-</section>
-
-<section id="testimonials">
-    <h2 class="section-title">Témoignages de nos clients</h2>
-    <div class="testimonials-grid">
-        <div class="testimonial-item">
-            <p>"Une équipe professionnelle et à l'écoute. SOFINGEC a su répondre parfaitement à nos besoins financiers."</p>
-            <span>- Client A</span>
-        </div>
-        <div class="testimonial-item">
-            <p>"Grâce à SOFINGEC, nous avons optimisé notre gestion budgétaire de manière efficace."</p>
-            <span>- Client B</span>
-        </div>
-    </div>
+    <button class="btn-devis">Demander un devis</button>
 </section>
 
 <section id="contact" class="contact">
@@ -164,6 +133,11 @@
     function toggleChat() {
         const chatPopup = document.getElementById('chatPopup');
         chatPopup.style.display = chatPopup.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function toggleMenu() {
+        const menu = document.querySelector('nav ul');
+        menu.classList.toggle('active');
     }
 </script>
 
