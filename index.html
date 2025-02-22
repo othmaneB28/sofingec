@@ -7,32 +7,43 @@
     <title>SOFINGEC</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.6; }
-        header { background: linear-gradient(135deg, #2a2a72, #009ffd); color: white; text-align: center; padding: 80px 20px; }
-        header h1 { font-size: 3rem; margin-bottom: 10px; }
-        header p { font-size: 1.2rem; }
-        nav { display: flex; justify-content: center; background-color: #333; position: sticky; top: 0; z-index: 1000; }
-        nav a { color: white; padding: 15px 25px; text-decoration: none; text-transform: uppercase; transition: background 0.3s; }
-        nav a:hover { background-color: #444; }
-        section { padding: 80px 20px; text-align: center; }
-        .section-title { font-size: 2.5rem; margin-bottom: 40px; color: #2a2a72; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
-        .service-item { background: white; border-radius: 10px; padding: 30px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s; }
-        .service-item:hover { transform: translateY(-10px); }
-        .service-item h3 { color: #009ffd; margin-bottom: 15px; }
-        .contact-form { display: flex; flex-direction: column; gap: 20px; max-width: 600px; margin: 0 auto; }
-        .contact-form input, .contact-form textarea { padding: 15px; border-radius: 5px; border: 1px solid #ddd; }
-        .contact-form button { background-color: #009ffd; color: white; padding: 15px; border: none; border-radius: 5px; cursor: pointer; transition: background 0.3s; }
-        .contact-form button:hover { background-color: #007acc; }
-        footer { background-color: #333; color: white; text-align: center; padding: 30px 20px; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; color: #333; line-height: 1.6; overflow-x: hidden; }
+        header { background: url('https://source.unsplash.com/1600x900/?morocco') center/cover no-repeat; color: white; text-align: center; padding: 100px 20px; transition: all 0.5s ease-in-out; }
+        header h1 { font-size: 4rem; font-weight: bold; animation: fadeInDown 1s ease-in-out; }
+        header p { font-size: 1.5rem; margin-top: 10px; animation: fadeInUp 1s ease-in-out; }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-50px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+
+        nav { display: flex; justify-content: center; gap: 30px; padding: 20px 0; background: rgba(0, 0, 0, 0.8); position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); transition: background 0.3s; }
+        nav a { color: white; font-weight: 600; text-decoration: none; font-size: 1rem; position: relative; }
+        nav a::after { content: ''; width: 0; height: 2px; background: white; position: absolute; bottom: -5px; left: 0; transition: width 0.3s; }
+        nav a:hover::after { width: 100%; }
+
+        section { padding: 100px 5%; text-align: center; transition: all 0.3s ease-in-out; }
+        .section-title { font-size: 3rem; margin-bottom: 50px; color: #b33e5c; }
+
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; }
+        .service-item { background: white; border-radius: 20px; padding: 40px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1); transform: translateY(0); transition: transform 0.5s; }
+        .service-item:hover { transform: translateY(-20px); }
+        .service-item h3 { color: #d1495b; margin-bottom: 15px; font-size: 1.8rem; }
+
+        .contact-form { display: flex; flex-direction: column; gap: 20px; max-width: 700px; margin: 0 auto; }
+        .contact-form input, .contact-form textarea { padding: 20px; border-radius: 10px; border: 1px solid #ddd; font-size: 1rem; }
+        .contact-form button { background-color: #d1495b; color: white; padding: 20px; border: none; border-radius: 10px; font-size: 1.2rem; cursor: pointer; transition: background 0.3s; }
+        .contact-form button:hover { background-color: #b33e5c; }
+
+        footer { background-color: #222; color: white; text-align: center; padding: 40px 0; font-size: 0.9rem; }
         @media (max-width: 768px) { header h1 { font-size: 2.5rem; } }
+
+        /* Smooth scroll effect */
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>SOFINGEC</h1>
-    <p>Finance | Gestion | Technologie | Conseil RH</p>
+    <p>Inspiré par le Maroc | Finance | Gestion | Technologie | Conseil RH</p>
 </header>
 
 <nav>
@@ -44,7 +55,7 @@
 <section id="about">
     <h2 class="section-title">À propos de SOFINGEC</h2>
     <p>
-        SOFINGEC est un cabinet innovant offrant des solutions sur mesure en finance, gestion, ressources humaines et technologies. Nous combinons expertise financière et transformation digitale pour garantir la performance durable de votre entreprise.
+        SOFINGEC fusionne la richesse culturelle du Maroc avec l'innovation moderne. Nous offrons des solutions sur mesure en finance, gestion, ressources humaines et technologies, garantissant performance et croissance durable.
     </p>
 </section>
 
@@ -53,19 +64,19 @@
     <div class="services-grid">
         <div class="service-item">
             <h3>Finance & Comptabilité</h3>
-            <p>Suivi financier, expertise comptable et optimisation des processus financiers.</p>
+            <p>Gestion financière, expertise comptable et optimisation pour une croissance durable.</p>
         </div>
         <div class="service-item">
             <h3>Gestion RH & Paie</h3>
-            <p>Gestion des ressources humaines, fiches de paie, conformité et conseils RH.</p>
+            <p>Solutions complètes pour la gestion des talents, conformité RH et paie simplifiée.</p>
         </div>
         <div class="service-item">
             <h3>Technologie & Cloud</h3>
-            <p>Migration cloud, solutions FinOps et gestion des infrastructures numériques.</p>
+            <p>Migration vers le cloud, FinOps et transformation digitale inspirée par l'innovation marocaine.</p>
         </div>
         <div class="service-item">
             <h3>Conseil & Audit</h3>
-            <p>Conseil stratégique, audit des systèmes technologiques et financiers.</p>
+            <p>Audit des systèmes et stratégies personnalisées pour garantir la réussite à long terme.</p>
         </div>
     </div>
 </section>
@@ -81,7 +92,7 @@
 </section>
 
 <footer>
-    <p>&copy; 2024 SOFINGEC. Tous droits réservés.</p>
+    <p>&copy; 2024 SOFINGEC. Inspiré par la beauté et l'innovation du Maroc. Tous droits réservés.</p>
 </footer>
 
 </body>
