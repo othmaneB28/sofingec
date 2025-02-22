@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SOFINGEC - Expertise en Finance, Gestion, Technologie et Conseil RH.">
+    <title>SOFINGEC</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; scroll-behavior: smooth; }
+        header { background-color: #2a2a72; color: white; padding: 50px 20px; text-align: center; }
+        nav { background-color: #333; padding: 10px 0; position: sticky; top: 0; z-index: 1000; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        section { padding: 60px 20px; }
+        .services, .contact, .about, .testimonials { background-color: #f4f4f4; }
+        .section-title { text-align: center; margin-bottom: 40px; font-size: 28px; color: #2a2a72; }
+        .service-item { margin-bottom: 30px; }
+        .service-item h3 { color: #2a2a72; }
+        .contact-form { display: flex; flex-direction: column; max-width: 500px; margin: 0 auto; }
+        .contact-form input, .contact-form textarea { margin-bottom: 15px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; }
+        .contact-form button { background-color: #2a2a72; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; }
+        footer { background-color: #333; color: white; text-align: center; padding: 20px 0; }
+        @media (max-width: 768px) { .contact-form { width: 90%; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>SOFINGEC</h1>
+    <p>Finance | Gestion | Technologie | Conseil RH</p>
+</header>
+
+<nav>
+    <a href="#about">À propos</a>
+    <a href="#services">Services</a>
+    <a href="#testimonials">Témoignages</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about" class="about">
+    <h2 class="section-title">À propos de SOFINGEC</h2>
+    <p>
+        SOFINGEC est un cabinet spécialisé dans l'accompagnement des entreprises en matière de finance, gestion,
+        transformation digitale, gestion des ressources humaines et technologies cloud. Nous offrons des solutions sur mesure
+        pour optimiser la performance financière et organisationnelle de nos clients.
+    </p>
+</section>
+
+<section id="services" class="services">
+    <h2 class="section-title">Nos Services</h2>
+    <div class="service-item">
+        <h3>Finance & Comptabilité</h3>
+        <p>Expertise comptable, suivi financier, optimisation des processus financiers pour une performance durable.</p>
+    </div>
+    <div class="service-item">
+        <h3>Gestion RH & Paie</h3>
+        <p>Gestion des ressources humaines, établissement des fiches de paie, contrats et conformité légale.</p>
+    </div>
+    <div class="service-item">
+        <h3>Technologie & Cloud</h3>
+        <p>Migration vers le cloud, solutions FinOps, gestion des infrastructures IT pour une transformation digitale réussie.</p>
+    </div>
+    <div class="service-item">
+        <h3>Conseil & Audit</h3>
+        <p>Conseil stratégique en finance, ressources humaines et audit des systèmes technologiques et organisationnels.</p>
+    </div>
+</section>
+
+<section id="testimonials" class="testimonials">
+    <h2 class="section-title">Témoignages</h2>
+    <p>"SOFINGEC nous a permis d'optimiser notre gestion financière et de réussir notre transition digitale. Une équipe experte et à l'écoute !" – Client Satisfait</p>
+    <p>"Grâce à leurs conseils RH, nous avons amélioré notre gestion du personnel tout en restant conforme aux normes légales." – Responsable RH</p>
+</section>
+
+<section id="contact" class="contact">
+    <h2 class="section-title">Contactez-nous</h2>
+    <form class="contact-form">
+        <input type="text" placeholder="Votre nom" required>
+        <input type="email" placeholder="Votre email" required>
+        <textarea rows="5" placeholder="Votre message" required></textarea>
+        <button type="submit">Envoyer</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2024 SOFINGEC. Tous droits réservés.</p>
+</footer>
+
+</body>
+</html>
