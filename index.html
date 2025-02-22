@@ -30,32 +30,33 @@
         section { padding: 80px 5%; text-align: center; }
         .section-title { font-size: 2rem; margin-bottom: 30px; color: #1e3c72; font-weight: 600; }
 
-        .about-content { max-width: 800px; margin: 0 auto; font-size: 1rem; line-height: 1.6; color: #555; text-align: justify; }
+        .about-content, .team-content, .why-content, .testimonials-content, .contact-details { max-width: 800px; margin: 0 auto; font-size: 1rem; line-height: 1.6; color: #555; text-align: justify; }
 
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .service-item { background: white; border-radius: 15px; padding: 25px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: transform 0.3s; }
-        .service-item:hover { transform: translateY(-10px); }
-        .service-item h3 { color: #2a5298; font-size: 1.3rem; margin-bottom: 10px; }
-        .service-item p { font-size: 0.95rem; }
+        .team-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+        .team-member { background: white; border-radius: 15px; padding: 20px; width: 250px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
+        .team-member h4 { color: #2a5298; font-size: 1.2rem; margin-bottom: 10px; }
+        .team-member p { font-size: 0.9rem; }
+
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .testimonial-item { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
+        .testimonial-item p { font-style: italic; }
+        .testimonial-item span { display: block; margin-top: 10px; font-weight: bold; color: #2a5298; }
+
+        iframe { width: 100%; height: 300px; border: none; border-radius: 15px; margin-bottom: 20px; }
 
         .contact-form { display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin: 0 auto; }
         .contact-form input, .contact-form textarea { padding: 15px; border-radius: 10px; border: 1px solid #ddd; font-size: 1rem; }
         .contact-form button { background-color: #2a5298; color: white; padding: 15px; border: none; border-radius: 10px; font-size: 1rem; cursor: pointer; transition: background 0.3s; }
         .contact-form button:hover { background-color: #1e3c72; }
 
+        .chat-btn { position: fixed; bottom: 20px; right: 20px; background-color: #ff6b6b; color: white; border: none; padding: 15px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1001; }
+        .chat-popup { display: none; position: fixed; bottom: 80px; right: 20px; background-color: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); padding: 20px; width: 300px; z-index: 1002; }
+
         footer { background-color: #222; color: white; text-align: center; padding: 20px 0; font-size: 0.9rem; }
 
         @media (max-width: 768px) {
             header h1 { font-size: 2rem; }
             nav ul { flex-direction: column; gap: 10px; }
-            .btn-container { flex-direction: column; }
-        }
-
-        @media (max-width: 480px) {
-            header img { width: 80px; }
-            header p { font-size: 0.9rem; }
-            .btn-client, .btn-services { width: 100%; }
-            .service-item { padding: 20px; }
         }
     </style>
 </head>
@@ -66,7 +67,9 @@
     <ul>
         <li><a href="#home">Accueil</a></li>
         <li><a href="#about">À propos</a></li>
-        <li><a href="#services">Services</a></li>
+        <li><a href="#team">Équipe</a></li>
+        <li><a href="#why">Pourquoi nous choisir ?</a></li>
+        <li><a href="#testimonials">Témoignages</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="btn-client">Espace Client</button>
@@ -91,30 +94,58 @@
     </div>
 </section>
 
-<section id="services">
-    <h2 class="section-title">Nos Services</h2>
-    <div class="services-grid">
-        <div class="service-item">
-            <h3>Finance & Comptabilité</h3>
-            <p>Expertise comptable, suivi financier, gestion budgétaire et optimisation des processus financiers.</p>
+<section id="team">
+    <h2 class="section-title">Notre Équipe</h2>
+    <div class="team-grid">
+        <div class="team-member">
+            <h4>PDG</h4>
+            <p>Monsieur Dupont TEST</p>
         </div>
-        <div class="service-item">
-            <h3>Gestion Financière</h3>
-            <p>Planification financière, gestion des flux de trésorerie et analyse des performances financières.</p>
+        <div class="team-member">
+            <h4>Directeur Financier</h4>
+            <p>Monsieur Léo TEST</p>
         </div>
-        <div class="service-item">
-            <h3>Conseil Financier</h3>
-            <p>Stratégies d’investissement, gestion des risques et accompagnement dans les décisions financières.</p>
+        <div class="team-member">
+            <h4>Directrice RH</h4>
+            <p>Madame Sarah TEST</p>
         </div>
-        <div class="service-item">
-            <h3>Audit & Conformité</h3>
-            <p>Audits financiers approfondis et vérifications réglementaires pour assurer la conformité et la transparence.</p>
+        <div class="team-member">
+            <h4>Directeur des Opérations</h4>
+            <p>Monsieur Ludo TEST</p>
+        </div>
+    </div>
+</section>
+
+<section id="why">
+    <h2 class="section-title">Pourquoi choisir SOFINGEC ?</h2>
+    <div class="why-content">
+        <p>
+            Chez SOFINGEC, nous croyons en un accompagnement personnalisé et une expertise reconnue. Notre engagement envers la transparence, la qualité et la performance garantit à nos clients un partenariat fiable et des résultats mesurables.
+        </p>
+    </div>
+</section>
+
+<section id="testimonials">
+    <h2 class="section-title">Témoignages de nos clients</h2>
+    <div class="testimonials-grid">
+        <div class="testimonial-item">
+            <p>"Une équipe professionnelle et à l'écoute. SOFINGEC a su répondre parfaitement à nos besoins financiers."</p>
+            <span>- Client A</span>
+        </div>
+        <div class="testimonial-item">
+            <p>"Grâce à SOFINGEC, nous avons optimisé notre gestion budgétaire de manière efficace."</p>
+            <span>- Client B</span>
         </div>
     </div>
 </section>
 
 <section id="contact" class="contact">
-    <h2 class="section-title">Contactez-nous</h2>
+    <h2 class="section-title">Contact et Accès</h2>
+    <div class="contact-details">
+        <p><strong>Téléphone :</strong> +2126666666</p>
+        <p><strong>Adresse :</strong> Casablanca, Maroc</p>
+        <iframe src="https://www.google.com/maps?q=Casablanca,Maroc&output=embed"></iframe>
+    </div>
     <form class="contact-form">
         <input type="text" placeholder="Votre nom" required>
         <input type="email" placeholder="Votre email" required>
@@ -122,6 +153,19 @@
         <button type="submit">Envoyer</button>
     </form>
 </section>
+
+<div class="chat-btn" onclick="toggleChat()">💬</div>
+<div class="chat-popup" id="chatPopup">
+    <h4>Chat IA - Assistance SOFINGEC</h4>
+    <p>Bonjour ! Comment pouvons-nous vous aider aujourd'hui ?</p>
+</div>
+
+<script>
+    function toggleChat() {
+        const chatPopup = document.getElementById('chatPopup');
+        chatPopup.style.display = chatPopup.style.display === 'block' ? 'none' : 'block';
+    }
+</script>
 
 <footer>
     <p>&copy; 2024 SOFINGEC - Société de Finance, Gestion et Consulting. Tous droits réservés.</p>
