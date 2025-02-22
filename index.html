@@ -6,21 +6,26 @@
     <meta name="description" content="SOFINGEC - Expertise en Finance, Gestion, Technologie et Conseil RH.">
     <title>SOFINGEC</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; scroll-behavior: smooth; }
-        header { background-color: #2a2a72; color: white; padding: 50px 20px; text-align: center; }
-        nav { background-color: #333; padding: 10px 0; position: sticky; top: 0; z-index: 1000; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        nav a:hover { text-decoration: underline; }
-        section { padding: 60px 20px; }
-        .services, .contact, .about, .testimonials { background-color: #f4f4f4; }
-        .section-title { text-align: center; margin-bottom: 40px; font-size: 28px; color: #2a2a72; }
-        .service-item { margin-bottom: 30px; }
-        .service-item h3 { color: #2a2a72; }
-        .contact-form { display: flex; flex-direction: column; max-width: 500px; margin: 0 auto; }
-        .contact-form input, .contact-form textarea { margin-bottom: 15px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; }
-        .contact-form button { background-color: #2a2a72; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; }
-        footer { background-color: #333; color: white; text-align: center; padding: 20px 0; }
-        @media (max-width: 768px) { .contact-form { width: 90%; } }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; color: #333; line-height: 1.6; }
+        header { background: linear-gradient(135deg, #2a2a72, #009ffd); color: white; text-align: center; padding: 80px 20px; }
+        header h1 { font-size: 3rem; margin-bottom: 10px; }
+        header p { font-size: 1.2rem; }
+        nav { display: flex; justify-content: center; background-color: #333; position: sticky; top: 0; z-index: 1000; }
+        nav a { color: white; padding: 15px 25px; text-decoration: none; text-transform: uppercase; transition: background 0.3s; }
+        nav a:hover { background-color: #444; }
+        section { padding: 80px 20px; text-align: center; }
+        .section-title { font-size: 2.5rem; margin-bottom: 40px; color: #2a2a72; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .service-item { background: white; border-radius: 10px; padding: 30px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s; }
+        .service-item:hover { transform: translateY(-10px); }
+        .service-item h3 { color: #009ffd; margin-bottom: 15px; }
+        .contact-form { display: flex; flex-direction: column; gap: 20px; max-width: 600px; margin: 0 auto; }
+        .contact-form input, .contact-form textarea { padding: 15px; border-radius: 5px; border: 1px solid #ddd; }
+        .contact-form button { background-color: #009ffd; color: white; padding: 15px; border: none; border-radius: 5px; cursor: pointer; transition: background 0.3s; }
+        .contact-form button:hover { background-color: #007acc; }
+        footer { background-color: #333; color: white; text-align: center; padding: 30px 20px; }
+        @media (max-width: 768px) { header h1 { font-size: 2.5rem; } }
     </style>
 </head>
 <body>
@@ -33,43 +38,36 @@
 <nav>
     <a href="#about">À propos</a>
     <a href="#services">Services</a>
-    <a href="#testimonials">Témoignages</a>
     <a href="#contact">Contact</a>
 </nav>
 
-<section id="about" class="about">
+<section id="about">
     <h2 class="section-title">À propos de SOFINGEC</h2>
     <p>
-        SOFINGEC est un cabinet spécialisé dans l'accompagnement des entreprises en matière de finance, gestion,
-        transformation digitale, gestion des ressources humaines et technologies cloud. Nous offrons des solutions sur mesure
-        pour optimiser la performance financière et organisationnelle de nos clients.
+        SOFINGEC est un cabinet innovant offrant des solutions sur mesure en finance, gestion, ressources humaines et technologies. Nous combinons expertise financière et transformation digitale pour garantir la performance durable de votre entreprise.
     </p>
 </section>
 
 <section id="services" class="services">
     <h2 class="section-title">Nos Services</h2>
-    <div class="service-item">
-        <h3>Finance & Comptabilité</h3>
-        <p>Expertise comptable, suivi financier, optimisation des processus financiers pour une performance durable.</p>
+    <div class="services-grid">
+        <div class="service-item">
+            <h3>Finance & Comptabilité</h3>
+            <p>Suivi financier, expertise comptable et optimisation des processus financiers.</p>
+        </div>
+        <div class="service-item">
+            <h3>Gestion RH & Paie</h3>
+            <p>Gestion des ressources humaines, fiches de paie, conformité et conseils RH.</p>
+        </div>
+        <div class="service-item">
+            <h3>Technologie & Cloud</h3>
+            <p>Migration cloud, solutions FinOps et gestion des infrastructures numériques.</p>
+        </div>
+        <div class="service-item">
+            <h3>Conseil & Audit</h3>
+            <p>Conseil stratégique, audit des systèmes technologiques et financiers.</p>
+        </div>
     </div>
-    <div class="service-item">
-        <h3>Gestion RH & Paie</h3>
-        <p>Gestion des ressources humaines, établissement des fiches de paie, contrats et conformité légale.</p>
-    </div>
-    <div class="service-item">
-        <h3>Technologie & Cloud</h3>
-        <p>Migration vers le cloud, solutions FinOps, gestion des infrastructures IT pour une transformation digitale réussie.</p>
-    </div>
-    <div class="service-item">
-        <h3>Conseil & Audit</h3>
-        <p>Conseil stratégique en finance, ressources humaines et audit des systèmes technologiques et organisationnels.</p>
-    </div>
-</section>
-
-<section id="testimonials" class="testimonials">
-    <h2 class="section-title">Témoignages</h2>
-    <p>"SOFINGEC nous a permis d'optimiser notre gestion financière et de réussir notre transition digitale. Une équipe experte et à l'écoute !" – Client Satisfait</p>
-    <p>"Grâce à leurs conseils RH, nous avons amélioré notre gestion du personnel tout en restant conforme aux normes légales." – Responsable RH</p>
 </section>
 
 <section id="contact" class="contact">
