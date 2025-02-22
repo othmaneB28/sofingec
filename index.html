@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="SOFINGEC - Société de Finance, Gestion et Consulting.">
     <title>SOFINGEC</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,40 +11,52 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Poppins', sans-serif; color: #333; overflow-x: hidden; background-color: #f4f4f4; }
-        header { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; text-align: center; padding: 100px 20px; }
-        header img { width: 120px; margin-bottom: 20px; }
-        header h1 { font-size: 3rem; font-weight: bold; }
-        header p { font-size: 1.2rem; margin-top: 10px; }
+        header { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; text-align: center; padding: 80px 20px; }
+        header img { width: 100px; max-width: 100%; height: auto; margin-bottom: 20px; }
+        header h1 { font-size: 2.5rem; font-weight: bold; }
+        header p { font-size: 1rem; margin-top: 10px; }
 
-        .btn-container { margin-top: 30px; }
-        .btn-client, .btn-services { background-color: #ff6b6b; color: white; padding: 15px 30px; border: none; border-radius: 30px; font-size: 1rem; cursor: pointer; transition: background 0.3s; margin: 10px; }
+        .btn-container { margin-top: 30px; display: flex; flex-direction: column; gap: 15px; align-items: center; }
+        .btn-client, .btn-services { background-color: #ff6b6b; color: white; padding: 15px 30px; border: none; border-radius: 30px; font-size: 1rem; cursor: pointer; transition: background 0.3s; width: 80%; max-width: 300px; }
         .btn-client:hover, .btn-services:hover { background-color: #ff5252; }
 
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background-color: white; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); position: sticky; top: 0; z-index: 1000; }
-        nav img { width: 120px; }
-        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background-color: white; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); position: sticky; top: 0; z-index: 1000; }
+        nav img { width: 100px; }
+        nav ul { display: flex; list-style: none; gap: 20px; }
         nav a { color: #333; font-weight: 600; text-decoration: none; position: relative; }
         nav a::after { content: ''; width: 0; height: 2px; background: #ff6b6b; position: absolute; bottom: -5px; left: 0; transition: width 0.3s; }
         nav a:hover::after { width: 100%; }
 
-        section { padding: 100px 5%; text-align: center; }
-        .section-title { font-size: 2.5rem; margin-bottom: 50px; color: #1e3c72; font-weight: 600; }
+        section { padding: 80px 5%; text-align: center; }
+        .section-title { font-size: 2rem; margin-bottom: 30px; color: #1e3c72; font-weight: 600; }
 
-        .about-content { max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8; color: #555; }
+        .about-content { max-width: 800px; margin: 0 auto; font-size: 1rem; line-height: 1.6; color: #555; text-align: justify; }
 
-        .services-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; }
-        .service-item { background: white; border-radius: 15px; width: 300px; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: transform 0.3s; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .service-item { background: white; border-radius: 15px; padding: 25px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: transform 0.3s; }
         .service-item:hover { transform: translateY(-10px); }
-        .service-item h3 { color: #2a5298; font-size: 1.5rem; margin-bottom: 15px; }
-        .service-item p { font-size: 1rem; }
+        .service-item h3 { color: #2a5298; font-size: 1.3rem; margin-bottom: 10px; }
+        .service-item p { font-size: 0.95rem; }
 
-        .contact-form { display: flex; flex-direction: column; gap: 20px; max-width: 600px; margin: 0 auto; }
+        .contact-form { display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin: 0 auto; }
         .contact-form input, .contact-form textarea { padding: 15px; border-radius: 10px; border: 1px solid #ddd; font-size: 1rem; }
-        .contact-form button { background-color: #2a5298; color: white; padding: 15px; border: none; border-radius: 10px; font-size: 1.2rem; cursor: pointer; transition: background 0.3s; }
+        .contact-form button { background-color: #2a5298; color: white; padding: 15px; border: none; border-radius: 10px; font-size: 1rem; cursor: pointer; transition: background 0.3s; }
         .contact-form button:hover { background-color: #1e3c72; }
 
-        footer { background-color: #222; color: white; text-align: center; padding: 30px 0; font-size: 0.9rem; }
-        @media (max-width: 768px) { header h1 { font-size: 2rem; } .services-grid { flex-direction: column; align-items: center; } }
+        footer { background-color: #222; color: white; text-align: center; padding: 20px 0; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            nav ul { flex-direction: column; gap: 10px; }
+            .btn-container { flex-direction: column; }
+        }
+
+        @media (max-width: 480px) {
+            header img { width: 80px; }
+            header p { font-size: 0.9rem; }
+            .btn-client, .btn-services { width: 100%; }
+            .service-item { padding: 20px; }
+        }
     </style>
 </head>
 <body>
