@@ -36,10 +36,10 @@
 
         .highlight { color: #FF3B2E; font-weight: bold; }
 
-        .contact-form, .candidature-form { display: flex; flex-direction: column; gap: 25px; max-width: 700px; margin: 0 auto; }
-        .contact-form input, .contact-form textarea, .candidature-form input, .candidature-form textarea { padding: 25px; border-radius: 20px; border: 1px solid #ddd; font-size: 1.2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .contact-form button, .candidature-form button { background-color: #FF7E5F; color: white; padding: 20px; border: none; border-radius: 20px; font-size: 1.3rem; cursor: pointer; transition: background 0.3s; }
-        .contact-form button:hover, .candidature-form button:hover { background-color: #FF3B2E; }
+        iframe { width: 100%; height: 350px; border: none; border-radius: 20px; margin-top: 30px; }
+
+        .chat-btn { position: fixed; bottom: 20px; right: 20px; background-color: #FF6F61; color: white; border: none; padding: 20px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1001; }
+        .chat-popup { display: none; position: fixed; bottom: 80px; right: 20px; background-color: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); padding: 30px; width: 350px; z-index: 1002; }
 
         footer { background-color: #222; color: white; text-align: center; padding: 40px 0; font-size: 1.2rem; letter-spacing: 0.5px; border-top-left-radius: 50px; border-top-right-radius: 50px; }
 
@@ -78,17 +78,17 @@
 
 <section id="team">
     <h2 class="section-title">Notre Équipe</h2>
-    <p>Découvrez notre équipe passionnée qui vous accompagne dans vos projets financiers et de gestion.</p>
+    <p>Rencontrez notre équipe dévouée, composée d'experts en finance, gestion et consulting prêts à vous accompagner.</p>
 </section>
 
 <section id="services">
     <h2 class="section-title">Nos Services</h2>
-    <p>Découvrez l'ensemble de nos prestations personnalisées adaptées à vos besoins.</p>
+    <p>Nous proposons une large gamme de services financiers : analyse budgétaire, audit, optimisation fiscale et conseil en investissement.</p>
 </section>
 
 <section id="why-us">
     <h2 class="section-title">Pourquoi Nous Rejoindre</h2>
-    <p>Nous nous distinguons par notre expertise, notre engagement envers la satisfaction client et notre approche personnalisée.</p>
+    <p>SOFINGEC se distingue par son expertise approfondie, ses solutions personnalisées et un accompagnement sur mesure pour chaque client.</p>
 </section>
 
 <section id="devis">
@@ -103,11 +103,13 @@
 
 <section id="testimonials">
     <h2 class="section-title">Témoignages</h2>
-    <p>Nos clients partagent leur expérience et la valeur ajoutée de notre accompagnement.</p>
+    <p>"SOFINGEC a transformé notre gestion financière. Leur approche personnalisée a fait toute la différence." - Client Satisfait</p>
 </section>
 
 <section id="contact">
     <h2 class="section-title">Contactez-nous</h2>
+    <p>📞 Téléphone : +2126666666<br>📍 Adresse : Casablanca, Maroc</p>
+    <iframe src="https://www.google.com/maps?q=Casablanca,Maroc&output=embed"></iframe>
     <form class="contact-form">
         <input type="text" placeholder="Votre nom complet" required>
         <input type="email" placeholder="Votre adresse email" required>
@@ -118,7 +120,7 @@
 
 <section id="candidatures">
     <h2 class="section-title">Rejoignez Notre Équipe</h2>
-    <p>Nous sommes constamment à la recherche de talents passionnés et motivés. Envoyez-nous votre candidature et faites partie de l'aventure SOFINGEC.</p>
+    <p>Rejoignez SOFINGEC et participez à une aventure professionnelle enrichissante avec des opportunités d'évolution.</p>
     <form class="candidature-form">
         <input type="text" placeholder="Votre nom complet" required>
         <input type="email" placeholder="Votre adresse email" required>
@@ -128,14 +130,25 @@
     </form>
 </section>
 
+<div class="chat-btn" onclick="toggleChat()">💬</div>
+<div class="chat-popup" id="chatPopup">
+    <h4>Chat IA - Assistance SOFINGEC</h4>
+    <p>Bonjour ! Comment pouvons-nous vous aider aujourd'hui ?</p>
+</div>
+
 <footer>
-    <p>&copy; 2025 SOFINGEC - Société de Finance, Gestion et Consulting. Tous droits réservés.</p>
+    <p>&copy; 2024 SOFINGEC - Société de Finance, Gestion et Consulting. Tous droits réservés.</p>
 </footer>
 
 <script>
     function toggleMenu() {
         const menu = document.querySelector('nav ul');
         menu.classList.toggle('active');
+    }
+
+    function toggleChat() {
+        const chatPopup = document.getElementById('chatPopup');
+        chatPopup.style.display = chatPopup.style.display === 'block' ? 'none' : 'block';
     }
 </script>
 
