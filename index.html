@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -27,7 +28,7 @@
         nav ul { display: none; flex-direction: column; width: 100%; background-color: white; position: absolute; top: 60px; left: 0; padding: 20px 0; text-align: center; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); }
         nav ul.active { display: flex; }
         nav a { color: #333; font-weight: 600; text-decoration: none; padding: 10px 0; }
-        @media (min-width: 1024px) { nav ul { display: none !important; } .burger { display: flex; } }
+        @media (min-width: 1024px) { nav ul { display: flex !important; flex-direction: row; gap: 20px; position: static; box-shadow: none; background: transparent; padding: 0; } .burger { display: none; } }
 
         section { padding: 80px 5%; text-align: center; }
         .section-title { font-size: 2rem; margin-bottom: 30px; color: #1e3c72; font-weight: 600; }
@@ -77,7 +78,6 @@
         <li><a href="#contact">Contact</a></li>
         <li><a href="#candidatures">Candidatures</a></li>
     </ul>
-    <button class="btn-client">Espace Client</button>
 </nav>
 
 <header id="home">
@@ -88,6 +88,36 @@
         <button class="btn-client">Espace Client</button>
     </div>
 </header>
+
+<section id="team">
+    <h2 class="section-title">Notre Équipe</h2>
+    <div class="team-grid">
+        <div class="team-member">
+            <h4>Directeur Général</h4>
+            <p>Monsieur Abdelaziz BELOUBAD</p>
+        </div>
+        <div class="team-member">
+            <h4>Directrice des Ressources Humaines</h4>
+            <p>Madame Rabia MESSAOUDI MOUSSI</p>
+        </div>
+        <div class="team-member">
+            <h4>Directeur des Opérations</h4>
+            <p>Monsieur Amine BELOUBAD</p>
+        </div>
+        <div class="team-member">
+            <h4>Directeur R&D</h4>
+            <p>Monsieur Faycal BELOUBAD</p>
+        </div>
+        <div class="team-member">
+            <h4>Directeur Commercial</h4>
+            <p>Monsieur Mehdi BELOUBAD</p>
+        </div>
+        <div class="team-member">
+            <h4>Directeur Technique</h4>
+            <p>Monsieur Othmane BELOUBAD</p>
+        </div>
+    </div>
+</section>
 
 <section id="services-why" class="services-why-section">
     <h2 class="section-title">Nos Services & Pourquoi nous choisir ?</h2>
@@ -111,6 +141,35 @@
         </div>
     </div>
     <button class="btn-devis">Demander un devis</button>
+</section>
+
+<section id="testimonials">
+    <h2 class="section-title">Témoignages de nos clients</h2>
+    <div class="testimonials-grid">
+        <div class="testimonial-item">
+            <p>"Une équipe professionnelle et à l'écoute. SOFINGEC a su répondre parfaitement à nos besoins financiers."</p>
+            <span>- Client A</span>
+        </div>
+        <div class="testimonial-item">
+            <p>"Grâce à SOFINGEC, nous avons optimisé notre gestion budgétaire de manière efficace."</p>
+            <span>- Client B</span>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <h2 class="section-title">Contact et Accès</h2>
+    <div class="contact-details">
+        <p><strong>Téléphone :</strong> +2126666666</p>
+        <p><strong>Adresse :</strong> Casablanca, Maroc</p>
+        <iframe src="https://www.google.com/maps?q=Casablanca,Maroc&output=embed"></iframe>
+    </div>
+    <form class="contact-form">
+        <input type="text" placeholder="Votre nom" required>
+        <input type="email" placeholder="Votre email" required>
+        <textarea rows="5" placeholder="Votre message" required></textarea>
+        <button type="submit">Envoyer</button>
+    </form>
 </section>
 
 <div class="chat-btn" onclick="toggleChat()">💬</div>
