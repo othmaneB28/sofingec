@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SOFINGEC - Plateforme SaaS de Gestion Financière et Consulting.">
-    <title>SOFINGEC SaaS - Gestion Financière et Consulting</title>
+    <meta name="description" content="SOFINGEC - Plateforme SaaS avec Espace Client et Tableau de Bord.">
+    <title>SOFINGEC SaaS - Espace Client & Tableau de Bord</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -20,9 +20,9 @@
         section { padding: 80px 5%; text-align: center; }
         .section-title { font-size: 2.5rem; margin-bottom: 40px; color: #1e3c72; }
 
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .feature-item { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .feature-item h3 { color: #2a5298; margin-bottom: 15px; }
+        .dashboard-container { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+        .dashboard-item { background: white; padding: 40px; border-radius: 15px; width: 300px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .dashboard-item h3 { color: #2a5298; margin-bottom: 15px; }
 
         .contact-form { display: flex; flex-direction: column; gap: 20px; max-width: 600px; margin: 0 auto; }
         .contact-form input, .contact-form textarea { padding: 15px; border-radius: 10px; border: 1px solid #ddd; font-size: 1rem; }
@@ -36,53 +36,44 @@
 
 <header>
     <h1>SOFINGEC SaaS</h1>
-    <p>Votre plateforme en ligne de gestion financière, conseil et suivi budgétaire en temps réel.</p>
-    <a href="#features" class="btn">Découvrir les fonctionnalités</a>
+    <p>Plateforme sécurisée avec espace client, tableau de bord interactif et gestion financière intelligente.</p>
+    <a href="#dashboard" class="btn">Accéder au Tableau de Bord</a>
 </header>
 
-<section id="features">
-    <h2 class="section-title">Fonctionnalités Principales</h2>
-    <div class="features-grid">
-        <div class="feature-item">
-            <h3>Suivi de Trésorerie</h3>
-            <p>Gérez la trésorerie de votre entreprise en temps réel avec des rapports dynamiques et précis.</p>
+<section id="dashboard">
+    <h2 class="section-title">Tableau de Bord</h2>
+    <div class="dashboard-container">
+        <div class="dashboard-item">
+            <h3>Suivi des Transactions</h3>
+            <p>Consultez l'historique et le statut de toutes vos transactions financières.</p>
         </div>
-        <div class="feature-item">
-            <h3>Tableaux de Bord Personnalisés</h3>
-            <p>Créez des dashboards financiers sur-mesure pour visualiser vos KPIs essentiels.</p>
-        </div>
-        <div class="feature-item">
+        <div class="dashboard-item">
             <h3>Gestion Budgétaire</h3>
-            <p>Planifiez et optimisez votre budget avec des outils intelligents et automatisés.</p>
+            <p>Planifiez et suivez vos budgets avec des analyses en temps réel.</p>
         </div>
-        <div class="feature-item">
-            <h3>Outils d’Analyse Financière</h3>
-            <p>Analysez vos données financières avec des rapports détaillés et des prévisions précises.</p>
+        <div class="dashboard-item">
+            <h3>Rapports Personnalisés</h3>
+            <p>Générez des rapports financiers détaillés, adaptés à vos besoins.</p>
         </div>
-        <div class="feature-item">
-            <h3>Accès Client Sécurisé</h3>
-            <p>Permettez à vos clients d’accéder à leurs documents et rapports financiers en toute sécurité.</p>
-        </div>
-        <div class="feature-item">
-            <h3>Automatisation de la Comptabilité</h3>
-            <p>Automatisez la saisie comptable et réduisez le temps consacré aux tâches répétitives.</p>
+        <div class="dashboard-item">
+            <h3>Espace Documents</h3>
+            <p>Partagez et téléchargez en toute sécurité des documents comptables.</p>
         </div>
     </div>
 </section>
 
 <section id="contact">
-    <h2 class="section-title">Contactez-nous</h2>
-    <p>Vous souhaitez en savoir plus ? Remplissez le formulaire ci-dessous :</p>
+    <h2 class="section-title">Espace Client - Connexion</h2>
+    <p>Connectez-vous pour accéder à votre espace personnel et à vos outils de gestion.</p>
     <form class="contact-form">
-        <input type="text" placeholder="Votre nom" required>
         <input type="email" placeholder="Votre adresse email" required>
-        <textarea rows="5" placeholder="Votre message" required></textarea>
-        <button type="submit">Envoyer</button>
+        <input type="password" placeholder="Votre mot de passe" required>
+        <button type="submit">Se Connecter</button>
     </form>
 </section>
 
 <footer>
-    <p>&copy; 2024 SOFINGEC SaaS - Plateforme de Gestion Financière et Consulting. Tous droits réservés.</p>
+    <p>&copy; 2024 SOFINGEC SaaS - Plateforme avec Espace Client et Tableau de Bord. Tous droits réservés.</p>
 </footer>
 
 </body>
