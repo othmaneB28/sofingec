@@ -27,12 +27,13 @@
         nav ul { display: none; flex-direction: column; width: 100%; background-color: white; position: absolute; top: 60px; left: 0; padding: 20px 0; text-align: center; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); }
         nav ul.active { display: flex; }
         nav a { color: #333; font-weight: 600; text-decoration: none; padding: 10px 0; }
-        @media (min-width: 768px) { nav ul { display: flex !important; flex-direction: row; gap: 20px; position: static; box-shadow: none; background: transparent; padding: 0; } .burger { display: none; } }
+        @media (min-width: 1024px) { nav ul { display: none !important; } .burger { display: flex; } }
 
         section { padding: 80px 5%; text-align: center; }
         .section-title { font-size: 2rem; margin-bottom: 30px; color: #1e3c72; font-weight: 600; }
 
-        .services-grid, .team-grid, .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .services-grid, .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); justify-content: center; gap: 30px; max-width: 1200px; margin: 0 auto; }
         .service-item, .team-member, .testimonial-item { background: white; border-radius: 15px; padding: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
         .service-item h3, .team-member h4, .testimonial-item span { color: #2a5298; font-weight: bold; }
         .service-item p, .team-member p, .testimonial-item p { font-size: 0.95rem; }
@@ -83,29 +84,6 @@
     </div>
 </header>
 
-<section id="services">
-    <h2 class="section-title">Nos Services</h2>
-    <div class="services-grid">
-        <div class="service-item">
-            <h3>Analyse Financière</h3>
-            <p>Évaluation des performances financières pour des décisions éclairées.</p>
-        </div>
-        <div class="service-item">
-            <h3>Gestion Budgétaire</h3>
-            <p>Optimisation des budgets et planification stratégique pour maximiser la rentabilité.</p>
-        </div>
-        <div class="service-item">
-            <h3>Conseil en Investissement</h3>
-            <p>Stratégies d’investissement personnalisées pour une croissance durable.</p>
-        </div>
-        <div class="service-item">
-            <h3>Audit Financier</h3>
-            <p>Contrôles et audits pour assurer la conformité réglementaire et la transparence financière.</p>
-        </div>
-    </div>
-    <button class="btn-devis">Demander un devis</button>
-</section>
-
 <section id="team">
     <h2 class="section-title">Notre Équipe</h2>
     <div class="team-grid">
@@ -130,10 +108,33 @@
             <p>Monsieur Mehdi BELOUBAD</p>
         </div>
         <div class="team-member">
-            <h4>Directeur Tehnique</h4>
+            <h4>Directeur Technique</h4>
             <p>Monsieur Othmane BELOUBAD</p>
         </div>
     </div>
+</section>
+
+<section id="services">
+    <h2 class="section-title">Nos Services</h2>
+    <div class="services-grid">
+        <div class="service-item">
+            <h3>Analyse Financière</h3>
+            <p>Évaluation des performances financières pour des décisions éclairées.</p>
+        </div>
+        <div class="service-item">
+            <h3>Gestion Budgétaire</h3>
+            <p>Optimisation des budgets et planification stratégique pour maximiser la rentabilité.</p>
+        </div>
+        <div class="service-item">
+            <h3>Conseil en Investissement</h3>
+            <p>Stratégies d’investissement personnalisées pour une croissance durable.</p>
+        </div>
+        <div class="service-item">
+            <h3>Audit Financier</h3>
+            <p>Contrôles et audits pour assurer la conformité réglementaire et la transparence financière.</p>
+        </div>
+    </div>
+    <button class="btn-devis">Demander un devis</button>
 </section>
 
 <section id="why">
