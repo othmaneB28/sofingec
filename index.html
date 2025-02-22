@@ -34,16 +34,21 @@
         section { padding: 100px 5%; text-align: center; background-color: #fdfdfd; }
         .section-title { font-size: 2.8rem; margin-bottom: 40px; color: #FF6F61; font-weight: 700; text-shadow: 1px 1px 3px rgba(0,0,0,0.1); }
 
-        .highlight { color: #FF3B2E; font-weight: bold; }
+        .team-grid, .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .team-member, .service-item { background-color: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .team-member h4, .service-item h4 { color: #FF6F61; margin-bottom: 10px; }
 
         iframe { width: 100%; height: 350px; border: none; border-radius: 20px; margin-top: 30px; }
+
+        .contact-form, .candidature-form, .devis-form { display: flex; flex-direction: column; gap: 25px; max-width: 700px; margin: 0 auto; }
+        .contact-form input, .contact-form textarea, .candidature-form input, .candidature-form textarea, .devis-form input, .devis-form textarea { padding: 20px; border-radius: 10px; border: 1px solid #ddd; font-size: 1.1rem; }
+        .contact-form button, .candidature-form button, .devis-form button { background-color: #FF6F61; color: white; padding: 15px; border: none; border-radius: 10px; font-size: 1.1rem; cursor: pointer; }
+        .contact-form button:hover, .candidature-form button:hover, .devis-form button:hover { background-color: #FF3B2E; }
 
         .chat-btn { position: fixed; bottom: 20px; right: 20px; background-color: #FF6F61; color: white; border: none; padding: 20px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1001; }
         .chat-popup { display: none; position: fixed; bottom: 80px; right: 20px; background-color: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); padding: 30px; width: 350px; z-index: 1002; }
 
         footer { background-color: #222; color: white; text-align: center; padding: 40px 0; font-size: 1.2rem; letter-spacing: 0.5px; border-top-left-radius: 50px; border-top-right-radius: 50px; }
-
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body>
@@ -78,22 +83,59 @@
 
 <section id="team">
     <h2 class="section-title">Notre Équipe</h2>
-    <p>Rencontrez notre équipe dévouée, composée d'experts en finance, gestion et consulting prêts à vous accompagner.</p>
+    <div class="team-grid">
+        <div class="team-member">
+            <h4>Directeur Général</h4>
+            <p>Monsieur Abdelaziz BELOUBAD - Responsable de la stratégie globale de l'entreprise.</p>
+        </div>
+        <div class="team-member">
+            <h4>Directrice des Ressources Humaines</h4>
+            <p>Madame Rabia MESSAOUDI MOUSSI - Gestion des talents et développement RH.</p>
+        </div>
+        <div class="team-member">
+            <h4>Directeur des Opérations</h4>
+            <p>Monsieur Amine BELOUBAD - Supervision des opérations quotidiennes.</p>
+        </div>
+        <div class="team-member">
+            <h4>Directeur R&D</h4>
+            <p>Monsieur Faycal BELOUBAD - Innovation et développement des nouvelles solutions.</p>
+        </div>
+        <div class="team-member">
+            <h4>Directeur Commercial</h4>
+            <p>Monsieur Mehdi BELOUBAD - Gestion des relations clients et ventes.</p>
+        </div>
+        <div class="team-member">
+            <h4>Directeur Technique</h4>
+            <p>Monsieur Othmane BELOUBAD - Responsable des systèmes d'information et infrastructure.</p>
+        </div>
+    </div>
 </section>
 
 <section id="services">
     <h2 class="section-title">Nos Services</h2>
-    <p>Nous proposons une large gamme de services financiers : analyse budgétaire, audit, optimisation fiscale et conseil en investissement.</p>
-</section>
-
-<section id="why-us">
-    <h2 class="section-title">Pourquoi Nous Rejoindre</h2>
-    <p>SOFINGEC se distingue par son expertise approfondie, ses solutions personnalisées et un accompagnement sur mesure pour chaque client.</p>
+    <div class="services-grid">
+        <div class="service-item">
+            <h4>Analyse Financière</h4>
+            <p>Analyse complète de la performance financière pour des décisions stratégiques.</p>
+        </div>
+        <div class="service-item">
+            <h4>Gestion Budgétaire</h4>
+            <p>Optimisation des budgets et gestion des flux financiers pour la croissance.</p>
+        </div>
+        <div class="service-item">
+            <h4>Audit Financier</h4>
+            <p>Audits internes et externes pour garantir la conformité et la transparence.</p>
+        </div>
+        <div class="service-item">
+            <h4>Conseil en Investissement</h4>
+            <p>Solutions d'investissement sur mesure pour une croissance durable.</p>
+        </div>
+    </div>
 </section>
 
 <section id="devis">
     <h2 class="section-title">Demander un Devis</h2>
-    <form class="contact-form">
+    <form class="devis-form">
         <input type="text" placeholder="Nom de votre entreprise" required>
         <input type="email" placeholder="Votre adresse email" required>
         <textarea rows="5" placeholder="Description de votre projet" required></textarea>
@@ -120,7 +162,7 @@
 
 <section id="candidatures">
     <h2 class="section-title">Rejoignez Notre Équipe</h2>
-    <p>Rejoignez SOFINGEC et participez à une aventure professionnelle enrichissante avec des opportunités d'évolution.</p>
+    <p>Participez à l'aventure SOFINGEC. Nous recrutons des talents passionnés et ambitieux.</p>
     <form class="candidature-form">
         <input type="text" placeholder="Votre nom complet" required>
         <input type="email" placeholder="Votre adresse email" required>
@@ -137,7 +179,7 @@
 </div>
 
 <footer>
-    <p>&copy; 2024 SOFINGEC - Société de Finance, Gestion et Consulting. Tous droits réservés.</p>
+    <p>&copy; 2025 SOFINGEC - Société de Finance, Gestion et Consulting. Tous droits réservés.</p>
 </footer>
 
 <script>
