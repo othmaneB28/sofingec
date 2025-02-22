@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SOFINGEC - Plateforme SaaS avec Espace Client et Tableau de Bord.">
-    <title>SOFINGEC SaaS - Espace Client & Tableau de Bord</title>
+    <meta name="description" content="SaaS complet - Plateforme RH et Paie SOFINGEC avec redirections et fonctionnalités avancées">
+    <title>SaaS RH & Paie - SOFINGEC</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -17,17 +17,27 @@
         .btn { display: inline-block; margin-top: 20px; padding: 15px 30px; background-color: #ff6b6b; color: white; border-radius: 30px; text-decoration: none; font-size: 1.1rem; transition: background 0.3s; }
         .btn:hover { background-color: #ff5252; }
 
+        nav { display: flex; justify-content: center; background-color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.05); padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+        nav a { margin: 0 20px; color: #333; text-decoration: none; font-weight: 600; font-size: 1rem; position: relative; }
+        nav a::after { content: ''; display: block; width: 0; height: 3px; background: #ff6b6b; transition: width 0.3s; }
+        nav a:hover::after { width: 100%; }
+
         section { padding: 80px 5%; text-align: center; }
-        .section-title { font-size: 2.5rem; margin-bottom: 40px; color: #1e3c72; }
+        .section-title { font-size: 2.5rem; margin-bottom: 40px; color: #1e3c72; font-weight: 700; }
 
-        .dashboard-container { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
-        .dashboard-item { background: white; padding: 40px; border-radius: 15px; width: 300px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .dashboard-item h3 { color: #2a5298; margin-bottom: 15px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: transform 0.3s; }
+        .card:hover { transform: translateY(-10px); }
+        .card h3 { color: #283e51; margin-bottom: 15px; }
+        .card p { font-size: 0.95rem; }
 
-        .contact-form { display: flex; flex-direction: column; gap: 20px; max-width: 600px; margin: 0 auto; }
-        .contact-form input, .contact-form textarea { padding: 15px; border-radius: 10px; border: 1px solid #ddd; font-size: 1rem; }
-        .contact-form button { background-color: #2a5298; color: white; padding: 15px; border-radius: 10px; font-size: 1.1rem; cursor: pointer; }
-        .contact-form button:hover { background-color: #1e3c72; }
+        .form-section { max-width: 600px; margin: 0 auto; }
+        .form-section input, .form-section textarea { width: 100%; padding: 15px; margin-bottom: 20px; border-radius: 10px; border: 1px solid #ddd; font-size: 1rem; }
+        .form-section button { width: 100%; padding: 15px; background-color: #2a5298; color: white; border-radius: 10px; font-size: 1.1rem; cursor: pointer; transition: background 0.3s; }
+        .form-section button:hover { background-color: #1e3c72; }
+
+        .interactive-btn { background-color: #4caf50; padding: 10px 20px; color: white; border-radius: 5px; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.3s; }
+        .interactive-btn:hover { background-color: #45a049; }
 
         footer { background-color: #222; color: white; text-align: center; padding: 30px 0; font-size: 0.9rem; }
     </style>
@@ -35,45 +45,124 @@
 <body>
 
 <header>
-    <h1>SOFINGEC SaaS</h1>
-    <p>Plateforme sécurisée avec espace client, tableau de bord interactif et gestion financière intelligente.</p>
+    <h1>SaaS RH & Paie - SOFINGEC</h1>
+    <p>Plateforme SaaS complète avec espace client, tableau de bord, gestion RH, paie et rapports dynamiques.</p>
     <a href="#dashboard" class="btn">Accéder au Tableau de Bord</a>
 </header>
 
+<nav>
+    <a href="#dashboard">Tableau de Bord</a>
+    <a href="#employee">Gestion RH</a>
+    <a href="#payroll">Module Paie</a>
+    <a href="#reports">Rapports</a>
+    <a href="#clients">Espace Client</a>
+    <a href="#settings">Paramètres</a>
+    <a href="#contact">Contact</a>
+</nav>
+
 <section id="dashboard">
     <h2 class="section-title">Tableau de Bord</h2>
-    <div class="dashboard-container">
-        <div class="dashboard-item">
-            <h3>Suivi des Transactions</h3>
-            <p>Consultez l'historique et le statut de toutes vos transactions financières.</p>
+    <div class="grid">
+        <div class="card">
+            <h3>Vue d'ensemble</h3>
+            <p>Suivi en temps réel des indicateurs clés RH et financiers.</p>
+            <a class="interactive-btn" onclick="alert('Redirection vers Tableau RH complet.')">Accéder</a>
         </div>
-        <div class="dashboard-item">
-            <h3>Gestion Budgétaire</h3>
-            <p>Planifiez et suivez vos budgets avec des analyses en temps réel.</p>
+        <div class="card">
+            <h3>Suivi des Congés</h3>
+            <p>Gestion des congés et absences des collaborateurs.</p>
+            <a class="interactive-btn" onclick="alert('Redirection vers Gestion des Congés.')">Accéder</a>
         </div>
-        <div class="dashboard-item">
-            <h3>Rapports Personnalisés</h3>
-            <p>Générez des rapports financiers détaillés, adaptés à vos besoins.</p>
+    </div>
+</section>
+
+<section id="employee">
+    <h2 class="section-title">Gestion RH</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Ajouter un Employé</h3>
+            <p>Ajoutez de nouveaux profils avec gestion documentaire.</p>
+            <a class="interactive-btn" onclick="alert('Formulaire complet pour ajout d’employé.')">Ajouter</a>
         </div>
-        <div class="dashboard-item">
-            <h3>Espace Documents</h3>
-            <p>Partagez et téléchargez en toute sécurité des documents comptables.</p>
+        <div class="card">
+            <h3>Liste des Employés</h3>
+            <p>Visualisez et gérez la base des collaborateurs.</p>
+            <a class="interactive-btn" onclick="alert('Liste des employés avec options de gestion.')">Consulter</a>
+        </div>
+    </div>
+</section>
+
+<section id="payroll">
+    <h2 class="section-title">Module Paie</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Génération des Fiches de Paie</h3>
+            <p>Générez des fiches de paie automatiques conformes.</p>
+            <a class="interactive-btn" onclick="alert('Module génération de fiches de paie.')">Générer</a>
+        </div>
+        <div class="card">
+            <h3>Historique des Paiements</h3>
+            <p>Suivi des paiements effectués et à venir.</p>
+            <a class="interactive-btn" onclick="alert('Historique des paiements accessible.')">Voir l’historique</a>
+        </div>
+    </div>
+</section>
+
+<section id="reports">
+    <h2 class="section-title">Rapports Dynamiques</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Rapports RH</h3>
+            <p>Analysez les performances RH avec rapports téléchargeables.</p>
+            <a class="interactive-btn" onclick="alert('Téléchargement rapports RH.')">Télécharger</a>
+        </div>
+        <div class="card">
+            <h3>Rapports Financiers</h3>
+            <p>Suivi des coûts RH et analyses financières détaillées.</p>
+            <a class="interactive-btn" onclick="alert('Rapports financiers disponibles.')">Accéder</a>
+        </div>
+    </div>
+</section>
+
+<section id="clients">
+    <h2 class="section-title">Espace Client</h2>
+    <p>Connexion sécurisée pour les clients afin d'accéder à leurs données.</p>
+    <form class="form-section">
+        <input type="email" placeholder="Email client" required>
+        <input type="password" placeholder="Mot de passe" required>
+        <button type="submit">Se connecter</button>
+    </form>
+</section>
+
+<section id="settings">
+    <h2 class="section-title">Paramètres</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Profil Utilisateur</h3>
+            <p>Modifiez vos informations personnelles et préférences.</p>
+            <a class="interactive-btn" onclick="alert('Accès au profil utilisateur.')">Modifier</a>
+        </div>
+        <div class="card">
+            <h3>Configuration de l’Entreprise</h3>
+            <p>Paramétrez les informations principales de votre entreprise.</p>
+            <a class="interactive-btn" onclick="alert('Configuration entreprise accessible.')">Configurer</a>
         </div>
     </div>
 </section>
 
 <section id="contact">
-    <h2 class="section-title">Espace Client - Connexion</h2>
-    <p>Connectez-vous pour accéder à votre espace personnel et à vos outils de gestion.</p>
-    <form class="contact-form">
-        <input type="email" placeholder="Votre adresse email" required>
-        <input type="password" placeholder="Votre mot de passe" required>
-        <button type="submit">Se Connecter</button>
+    <h2 class="section-title">Contactez-Nous</h2>
+    <p>Pour toute assistance ou demande spécifique, remplissez le formulaire :</p>
+    <form class="form-section">
+        <input type="text" placeholder="Nom complet" required>
+        <input type="email" placeholder="Adresse email" required>
+        <textarea rows="5" placeholder="Votre message" required></textarea>
+        <button type="submit">Envoyer</button>
     </form>
 </section>
 
 <footer>
-    <p>&copy; 2024 SOFINGEC SaaS - Plateforme avec Espace Client et Tableau de Bord. Tous droits réservés.</p>
+    <p>&copy; 2024 SOFINGEC - Plateforme SaaS RH et Paie complète. Tous droits réservés.</p>
 </footer>
 
 </body>
